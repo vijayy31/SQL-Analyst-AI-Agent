@@ -43,6 +43,8 @@ The local API base URL is `http://127.0.0.1:8000`. Interactive API documentation
 
 ## 4. Authenticate requests
 
+`APP_API_KEY` - use random uuid as key and store in .env
+
 Every API route requires the configured `APP_API_KEY` in the `X-API-Key` header. The server compares the supplied key to the environment value; it never returns the key in a response.
 
 `GET /api/health` checks that the service is running. It also requires the API key:
