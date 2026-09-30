@@ -1,0 +1,1 @@
+[('CR-V', 149), ('Sonata', 185), ('Fusion', 166), ('RAV4', 131), ('Corolla', 122), ('Model Y', 232), ('Elantra', 170), ('Prius', 111), ('Civic', 147), ('Altima', 181), ('Rogue', 176), ('Focus', 172), ('Model 3', 263), ('Accord', 167), ('Tucson', 161), ('Escape', 188), ('Camry', 116), ('Sentra', 163)]

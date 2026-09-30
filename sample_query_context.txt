@@ -1,0 +1,104 @@
+Database Name: OLA
+
+Table_name: payments
+
+ Column: payment_id, Data Type: int
+ Column: ride_id, Data Type: int
+ Column: user_id, Data Type: int
+ Column: amount, Data Type: float
+ Column: payment_method, Data Type: varchar(1000)
+ Column: payment_status, Data Type: varchar(1000)
+ Column: transaction_id, Data Type: varchar(1000)
+ Column: payment_time, Data Type: timestamp
+
+ SAMPLE DATA from table payments:
+ (1, 13960, 6945, 16.07, 'credit_card', 'completed', 'TXN-00000001', datetime.datetime(2026, 4, 7, 15, 15, 52))
+ (2, 1187, 5541, 47.01, 'debit_card', 'completed', 'TXN-00000002', datetime.datetime(2025, 10, 7, 14, 56, 33))
+ (3, 3719, 8738, 74.77, 'paypal', 'completed', 'TXN-00000003', datetime.datetime(2026, 1, 14, 16, 19, 32))
+ (4, 15623, 5455, 66.79, 'apple_pay', 'completed', 'TXN-00000004', datetime.datetime(2026, 3, 20, 8, 37, 33))
+ (5, 15032, 1129, 30.85, 'paypal', 'completed', 'TXN-00000005', datetime.datetime(2026, 4, 29, 18, 56, 19))
+
+
+Table_name: ratings
+
+ Column: rating_id, Data Type: int
+ Column: ride_id, Data Type: int
+ Column: rider_id, Data Type: int
+ Column: driver_id, Data Type: int
+ Column: rating, Data Type: int
+ Column: comment, Data Type: varchar(1000)
+ Column: rated_at, Data Type: varchar(1000)
+
+ SAMPLE DATA from table ratings:
+ (1, 13870, 5833, 7667, 5, 'Could have been better', '2025-09-09 13:41:28')
+ (2, 2279, 1026, 3147, 4, 'Could have been better', '2026-06-02 23:39:31')
+ (3, 19701, 960, 2267, 5, 'Great ride', '2026-07-23 06:31:59')
+ (4, 860, 2999, 4679, 3, 'Average experience', '2026-04-23 04:57:28')
+ (5, 7868, 4277, 8698, 5, 'Average experience', '2025-10-09 06:15:35')
+
+
+Table_name: rides
+
+ Column: ride_id, Data Type: int
+ Column: rider_id, Data Type: int
+ Column: driver_id, Data Type: int
+ Column: requested_at, Data Type: timestamp
+ Column: pickup_time, Data Type: timestamp
+ Column: dropoff_time, Data Type: timestamp
+ Column: pickup_latitude, Data Type: double
+ Column: pickup_longitude, Data Type: double
+ Column: dropoff_latitude, Data Type: double
+ Column: dropoff_longitude, Data Type: double
+ Column: distance_km, Data Type: float
+ Column: fare, Data Type: float
+ Column: surge_multiplier, Data Type: float
+ Column: status, Data Type: varchar(1000)
+ Column: cancellation_reason, Data Type: varchar(1000)
+
+ SAMPLE DATA from table rides:
+ (1, 6166, 7514, datetime.datetime(2026, 2, 27, 20, 13, 30), None, None, 44.229291, -63.543162, 44.496423, -67.980735, 0.0, 0.0, 1.0, 'cancelled', 'driver_cancelled')
+ (2, 5074, 4936, datetime.datetime(2025, 12, 26, 8, 26, 37), datetime.datetime(2025, 12, 26, 8, 34, 37), datetime.datetime(2025, 12, 26, 8, 59, 37), 43.88127, -70.083206, 43.410488, -70.560855, 13.16, 52.17, 1.5, 'completed', None)
+ (3, 2969, 5849, datetime.datetime(2025, 7, 3, 7, 58, 26), datetime.datetime(2025, 7, 3, 8, 2, 26), datetime.datetime(2025, 7, 3, 9, 2, 26), 43.856247, -75.945737, 44.133943, -70.313959, 26.59, 70.53, 1.0, 'completed', None)
+ (4, 7932, 1030, datetime.datetime(2025, 3, 1, 4, 50, 4), datetime.datetime(2025, 3, 1, 5, 3, 4), datetime.datetime(2025, 3, 1, 5, 40, 4), 44.360329, -64.339011, 44.395041, -77.436515, 11.35, 42.98, 1.2, 'completed', None)
+ (5, 2468, 8856, datetime.datetime(2026, 7, 9, 7, 45, 41), datetime.datetime(2026, 7, 9, 7, 51, 41), datetime.datetime(2026, 7, 9, 8, 36, 41), 43.696089, -66.938775, 44.66913, -74.876163, 23.35, 59.61, 1.0, 'completed', None)
+
+
+Table_name: users
+
+ Column: user_id, Data Type: int
+ Column: first_name, Data Type: varchar(1000)
+ Column: last_name, Data Type: varchar(1000)
+ Column: email, Data Type: varchar(1000)
+ Column: phone, Data Type: varchar(1000)
+ Column: city, Data Type: varchar(1000)
+ Column: province, Data Type: varchar(1000)
+ Column: user_type, Data Type: varchar(1000)
+ Column: signup_date, Data Type: date
+ Column: is_active, Data Type: tinyint(1)
+
+ SAMPLE DATA from table users:
+ (1, 'Danielle', 'Johnson', 'user1@example.com', '+13567729816', 'Halifax', 'NS', 'rider', datetime.date(2025, 5, 25), 1)
+ (2, 'Joshua', 'Walker', 'user2@example.com', '+19222900764', 'Vancouver', 'BC', 'rider', datetime.date(2025, 5, 4), 1)
+ (3, 'Jill', 'Rhodes', 'user3@example.com', '+12900432998', 'Winnipeg', 'MB', 'rider', datetime.date(2026, 5, 24), 1)
+ (4, 'Patricia', 'Miller', 'user4@example.com', '+19812397600', 'Montreal', 'QC', 'rider', datetime.date(2026, 5, 21), 1)
+ (5, 'Robert', 'Johnson', 'user5@example.com', '+16892737056', 'Winnipeg', 'MB', 'rider', datetime.date(2024, 4, 15), 1)
+
+
+Table_name: vehicles
+
+ Column: vehicle_id, Data Type: int
+ Column: driver_id, Data Type: int
+ Column: make, Data Type: varchar(1000)
+ Column: model, Data Type: varchar(1000)
+ Column: year, Data Type: year
+ Column: license_plate, Data Type: varchar(1000)
+ Column: color, Data Type: varchar(1000)
+ Column: is_active, Data Type: tinyint(1)
+
+ SAMPLE DATA from table vehicles:
+ (1, 7, 'Honda', 'CR-V', 2024, 'OP331', 'Grey', 1)
+ (2, 10, 'Hyundai', 'Sonata', 2026, 'WK520', 'Black', 1)
+ (3, 19, 'Ford', 'Fusion', 2022, 'LI224', 'Black', 1)
+ (4, 25, 'Toyota', 'RAV4', 2015, 'FN542', 'Black', 1)
+ (5, 26, 'Hyundai', 'Sonata', 2016, 'CS875', 'Grey', 1)
+

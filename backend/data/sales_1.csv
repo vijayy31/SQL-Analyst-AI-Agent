@@ -1,0 +1,10 @@
+sale_id,sale_date,product,category,quantity,unit_price,total_amount
+1001,2026-09-01,Laptop,Electronics,2,75000,150000
+1002,2026-09-02,Mouse,Electronics,10,1200,12000
+1003,2026-09-03,Keyboard,Electronics,5,2500,12500
+1004,2026-09-04,Office Chair,Furniture,3,8500,25500
+1005,2026-09-05,Desk,Furniture,2,12000,24000
+1006,2026-09-06,Monitor,Electronics,4,18000,72000
+1007,2026-09-07,Notebook,Stationery,20,150,3000
+1008,2026-09-08,Pen,Stationery,50,30,1500
+1009,2026-09-09,Headphones,Electronics,6,3500,21000
