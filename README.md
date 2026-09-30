@@ -1,5 +1,7 @@
 # SQL Agent Backend
 
+A sample demo video is available if you'd like to watch.
+
 This service exposes the SQL analysis graph over HTTP. Start it from the repository root so it can load the root `.env` file and backend source modules.
 
 ## 1. Install dependencies
