@@ -20,7 +20,7 @@ def db_feed():
     try:
         # creating the list for the filenames
         files = ["ratings", "payments", "rides", "users", "vehicles"]
-
+        db_name = os.getenv("DB_NAME")
         for file in files:
             # path for the file
             file_path = os.path.join(os.path.dirname(os.getcwd()), "data",f"{file}.csv")
@@ -39,7 +39,7 @@ def db_feed():
             print_s = ["%s" for column in df.schema.items()]
 
             #creating the sql command for the insertion
-            sql_command = f"INSERT INTO OLA.{file} ({",".join(columns)})\
+            sql_command = f"INSERT INTO {db_name}.{file} ({",".join(columns)})\
                                 VALUES ({",".join(print_s)})"
             # cursor execution
             cursor.executemany(sql_command, rows)

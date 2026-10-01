@@ -1,8 +1,8 @@
-CREATE DATABASE OLA;
+CREATE DATABASE UBER;
 
-USE OLA;
+USE UBER;
 
-CREATE TABLE OLA.RATINGS(
+CREATE TABLE UBER.RATINGS(
     rating_id Int PRIMARY KEY,
     ride_id Int,
     rider_id Int,
@@ -12,7 +12,7 @@ CREATE TABLE OLA.RATINGS(
     rated_at VARCHAR(1000)
 );
 
-CREATE TABLE IF NOT EXISTS OLA.PAYMENTS(
+CREATE TABLE IF NOT EXISTS UBER.PAYMENTS(
     payment_id Int PRIMARY KEY,
     ride_id Int,
     user_id Int,
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS OLA.PAYMENTS(
 );
 
 
-CREATE TABLE IF NOT EXISTS OLA.RIDES(
+CREATE TABLE IF NOT EXISTS UBER.RIDES(
     ride_id Int PRIMARY KEY,
     rider_id Int,
     driver_id Int,
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS OLA.RIDES(
     cancellation_reason VARCHAR(1000)
 );
 
-CREATE TABLE IF NOT EXISTS OLA.USERS(
+CREATE TABLE IF NOT EXISTS UBER.USERS(
     user_id Int PRIMARY KEY,
     first_name VARCHAR(1000),
     last_name VARCHAR(1000),
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS OLA.USERS(
     is_active BOOL
 );
 
-CREATE TABLE IF NOT EXISTS OLA.VEHICLES(
+CREATE TABLE IF NOT EXISTS UBER.VEHICLES(
     vehicle_id Int PRIMARY KEY,
     driver_id Int,
     make VARCHAR(1000),
@@ -67,40 +67,40 @@ CREATE TABLE IF NOT EXISTS OLA.VEHICLES(
 );
 
 CREATE INDEX idx_vehicles_driver_id
-ON OLA.vehicles(driver_id);
+ON UBER.vehicles(driver_id);
 
 CREATE INDEX idx_rides_rider_id
-ON OLA.rides(rider_id);
+ON UBER.rides(rider_id);
 
 CREATE INDEX idx_rides_driver_id
-ON OLA.rides(driver_id);
+ON UBER.rides(driver_id);
 
 CREATE INDEX idx_rides_requested_at
-ON OLA.rides(requested_at);
+ON UBER.rides(requested_at);
 
 CREATE INDEX idx_payments_ride_id
-ON OLA.payments(ride_id);
+ON UBER.payments(ride_id);
 
 CREATE INDEX idx_payments_user_id
-ON OLA.payments(user_id);
+ON UBER.payments(user_id);
 
 CREATE INDEX idx_ratings_ride_id
-ON OLA.ratings(ride_id);
+ON UBER.ratings(ride_id);
 
 CREATE INDEX idx_ratings_driver_id
-ON OLA.ratings(driver_id);
+ON UBER.ratings(driver_id);
 
 -- SELECT
 --     index_name,
 --     column_name,
 --     non_unique
 -- FROM information_schema.statistics
--- WHERE table_schema = 'OLA';
+-- WHERE table_schema = 'UBER';
 
 -- EXPLAIN
--- SELECT * FROM OLA.RATINGS
+-- SELECT * FROM UBER.RATINGS
 -- WHERE ride_id = 13870;
 
 -- DROP TABLE RATINGS, PAYMENTS, RIDES, USERS, VEHICLES;
 
--- SELECT * FROM OLA.RIDES LIMIT 10;
+-- SELECT * FROM UBER.RIDES LIMIT 10;
